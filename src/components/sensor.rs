@@ -215,16 +215,14 @@ impl<'a> crate::discoverable::NodeId for Sensor<'a> {
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
-#[serde(untagged, rename_all = "snake_case")]
+#[serde(rename_all = "snake_case")]
 pub enum SensorEntityCategory {
     Diagnostic,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
-#[serde(untagged, rename_all = "snake_case")]
+#[serde(rename_all = "snake_case")]
 pub enum SensorClass {
-    #[serde(rename = "None")]
-    None,
     ApparentPower,
     Aql,
     AtmosphericPressure,

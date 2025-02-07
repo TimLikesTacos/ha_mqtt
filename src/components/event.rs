@@ -64,17 +64,15 @@ pub struct Event<'a> {
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
-#[serde(untagged, rename_all = "snake_case")]
+#[serde(rename_all = "snake_case")]
 pub enum EventClass {
-    #[serde(rename = "None")]
-    None,
     Button,
     Doorbell,
     Motion,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
-#[serde(untagged, rename_all = "snake_case")]
+#[serde(rename_all = "snake_case")]
 pub enum EventEntityCategory {
     Diagnostic,
     Config,

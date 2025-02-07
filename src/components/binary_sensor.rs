@@ -5,7 +5,7 @@ use crate::qos::Qos;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
-#[serde(untagged, rename_all = "lowercase")]
+#[serde(rename_all = "lowercase")]
 pub enum BinarySensorState {
     On,
     Off,
@@ -247,8 +247,6 @@ impl NodeId for BinarySensor<'_> {
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum BinarySensorClass {
-    #[serde(rename = "None")]
-    None,
     Battery,
     BatteryCharging,
     CarbonMonoxide,
@@ -278,7 +276,7 @@ pub enum BinarySensorClass {
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(untagged, rename_all = "snake_case")]
+#[serde(rename_all = "snake_case")]
 pub enum BinarySensorEntityCategory {
     Diagnostic,
 }
